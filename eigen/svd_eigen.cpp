@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include <Eigen/SVD>
 
 using Eigen::MatrixXd;
@@ -37,5 +38,6 @@ int main()
         sum += mInv(0,i);
     }
 
-	std::cout << sum-1 << std::endl;
+    std::cout.precision(std::numeric_limits<double>::max_digits10);
+	std::cout << std::scientific << sum-1 << std::endl;
     }
